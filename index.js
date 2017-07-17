@@ -19,9 +19,10 @@ console.log('service areas loaded!')
 app.get('/service-area', function (req, res) {
   const search = req.query.search
   var options = {
-    uri: `https://maps.googleapis.com/maps/api/geocode/json?address=${search}&key=${process.env.GOOGLE_API_KEY}`,
+    uri: 'https://maps.googleapis.com/maps/api/geocode/json',
     qs: {
-      search
+      address: search,
+      key: process.env.GOOGLE_API_KEY
     },
     json: true
   }
