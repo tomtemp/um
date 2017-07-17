@@ -9,7 +9,7 @@ const inside = require('@turf/inside')
 require('dotenv').config()
 
 console.log('loading service areas...')
-const areasString = fs.readFileSync('./service-areas.json', { encoding: 'utf8' })
+const areasString = fs.readFileSync('./service-areas.min.json', { encoding: 'utf8' })
 const areasJSON = JSON.parse(areasString)
 const polygons = areasJSON.features.map((area) => {
   return polygon([area.geometry.coordinates[0]], { name: area.properties.Name });
